@@ -3,119 +3,458 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shiran Kavishka | Portfolio</title>
+    <title>J. C. Shiran Kavishka | Portfolio</title>
+    <!-- Google Fonts for modern look -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for beautiful skill & social icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
-        /* Base styles */
-        body { 
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-            margin: 0; 
-            padding: 0; 
-            line-height: 1.6; 
-            background-color: #f4f7f6; 
-            color: #333;
+        /* Modern CSS Reset & Core Styling resembling Bedimcode style */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
         }
-        
-        /* Header styling */
-        header { 
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); 
-            color: #fff; 
-            padding: 60px 20px; 
-            text-align: center; 
-        }
-        header h1 { margin: 0; font-size: 2.5rem; letter-spacing: 1px; }
-        header p { margin: 10px 0 0 0; font-size: 1.2rem; opacity: 0.9; }
 
-        /* Container for content */
-        .container {
-            max-width: 800px;
-            margin: 30px auto;
+        :root {
+            --primary-color: #4a6cf7;
+            --text-dark: #1f2937;
+            --text-light: #4b5563;
+            --bg-light: #f9fafb;
+            --white: #ffffff;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Navigation Bar */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            z-index: 1000;
+            padding: 15px 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: var(--primary-color);
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            margin-left: 25px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Common Section Layout */
+        section {
+            padding: 90px 10% 60px 10%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+            color: var(--text-dark);
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 3px;
+            background-color: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        /* Home / Hero Section (Bedimcode Layout) */
+        #home {
+            display: table;
+            width: 100%;
+            padding-top: 130px;
+        }
+
+        .hero-left, .hero-right {
+            display: table-cell;
+            vertical-align: middle;
+            width: 50%;
+        }
+
+        .hero-left h1 {
+            font-size: 2.8rem;
+            line-height: 1.2;
+            margin-bottom: 10px;
+        }
+
+        .hero-left h2 {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+
+        .hero-left p {
+            color: var(--text-light);
+            margin-bottom: 25px;
+        }
+
+        /* Dynamic Blob Image Styling */
+        .blob-img {
+            width: 320px;
+            height: 350px;
+            background-image: url('photo.jpg');
+            background-size: cover;
+            background-position: center;
+            margin: 0 auto;
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            box-shadow: 0 15px 30px rgba(74, 108, 247, 0.2);
+            animation: blob-animate 8s ease-in-out infinite alternate;
+        }
+
+        @keyframes blob-animate {
+            0% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+            50% { border-radius: 50% 50% 30% 70% / 50% 60% 40% 50%; }
+            100% { border-radius: 60% 40% 60% 40% / 40% 30% 70% 60%; }
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 10px 24px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 500;
+            box-shadow: 0 5px 15px rgba(74, 108, 247, 0.3);
+            transition: transform 0.3s, background-color 0.3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            background-color: #3554d1;
+        }
+
+        /* Education Layout */
+        .edu-card {
+            background-color: var(--white);
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            border-left: 4px solid var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        /* Skills Layout with Icons (Grid style) */
+        .skills-grid {
+            display: table;
+            width: 100%;
+            border-spacing: 20px;
+        }
+
+        .skills-row {
+            display: table-row;
+        }
+
+        .skill-card {
+            display: table-cell;
+            background: var(--white);
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            width: 33.33%;
+            transition: transform 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .skill-card i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        /* Projects Layout */
+        .projects-table {
+            display: table;
+            width: 100%;
+            border-spacing: 20px;
+        }
+
+        .project-card {
+            display: table-cell;
+            background: var(--white);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            width: 50%;
+        }
+
+        .project-tags {
+            margin: 15px 0;
+        }
+
+        .tag {
+            background-color: #eef2ff;
+            color: var(--primary-color);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-right: 5px;
+            font-weight: 500;
+        }
+
+        .proj-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        /* Contact Details & Interactive Form */
+        .contact-container {
+            display: table;
+            width: 100%;
+        }
+
+        .contact-info, .contact-form-wrapper {
+            display: table-cell;
+            width: 50%;
+            vertical-align: top;
             padding: 0 20px;
         }
-        
-        /* Section styling */
-        section { 
-            margin-bottom: 25px; 
-            padding: 25px; 
-            background: #fff; 
-            border-radius: 8px; 
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05); 
-        }
-        h2 { 
-            color: #1e3c72; 
-            border-bottom: 2px solid #2a5298; 
-            padding-bottom: 8px; 
-            margin-top: 0;
+
+        .contact-item {
+            margin-bottom: 20px;
         }
 
-        /* List styling */
-        ul { padding-left: 20px; }
-        li { margin-bottom: 8px; }
-        
-        /* Contact item styling */
-        .contact-info p { margin: 8px 0; }
-        
-        /* Footer */
+        .contact-item i {
+            color: var(--primary-color);
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+
+        .social-icons a {
+            color: var(--text-dark);
+            font-size: 1.5rem;
+            margin-right: 15px;
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: var(--primary-color);
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            outline: none;
+        }
+
+        input:focus, textarea:focus {
+            border-color: var(--primary-color);
+        }
+
         footer {
+            background-color: #111827;
+            color: #9ca3af;
             text-align: center;
             padding: 20px;
             font-size: 0.9rem;
-            color: #666;
+            margin-top: 40px;
         }
     </style>
 </head>
 <body>
 
+    <!-- Header Navigation -->
     <header>
-        <h1>J. C. Shiran Kavishka</h1>
-        <p>Undergraduate | University of Sri Jayewardenepura</p>
+        <div class="logo">Shiran.K</div>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#education">Education</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
     </header>
 
-    <div class="container">
+    <!-- Home Section -->
+    <section id="home">
+        <div class="hero-left">
+            <h2>Hello, I am</h2>
+            <h1>J. C. Shiran Kavishka</h1>
+            <h2>Undergraduate Student</h2>
+            <p>I am an undergraduate student at the University of Sri Jayewardenepura, pursuing a degree in Physical Science with a strong focus on ICT. Highly interested in full-stack web development, software engineering, databases, and automating workflows using cloud tools.</p>
+            <a href="#contact" class="btn">Get In Touch</a>
+        </div>
+        <div class="hero-right">
+            <!-- Dynamic Blob styled wrapper for photo.jpg -->
+            <div class="blob-img"></div>
+        </div>
+    </section>
 
-        <section id="about">
-            <h2>Personal Information</h2>
-            <p>Hi, I am Shiran Kavishka. I am an undergraduate student at the University of Sri Jayewardenepura, pursuing a degree in Physical Science with a strong focus on ICT. I am highly interested in software development, web designing, and learning how modern technologies solve real-world problems.</p>
-        </section>
+    <!-- Education Section -->
+    <section id="education">
+        <h2 class="section-title">Education</h2>
+        <div class="edu-card">
+            <h3>BSc (General) Undergraduate Degree</h3>
+            <p style="color: var(--primary-color); font-weight: 500;">University of Sri Jayewardenepura | Faculty of Applied Sciences</p>
+            <p style="color: var(--text-light); margin-top: 5px;">Specializing in Computer Science, Mathematics, and ICT modules including Full Stack Development, Data Structures & Algorithms, and DevOps Engineering & Practices.</p>
+        </div>
+    </section>
 
-        <section id="education">
-            <h2>Education</h2>
-            <ul>
-                <li><strong>B.Sc. (General) Degree in Physical Science (ICT)</strong><br>University of Sri Jayewardenepura (USJ)</li>
-                <li>Advanced Level (A/L) - Physical Science Stream</li>
-            </ul>
-        </section>
-
-        <section id="skills">
-            <h2>Skills</h2>
-            <ul>
-                <li><strong>Web Development:</strong> HTML5, CSS3, JavaScript (Basic)</li>
-                <li><strong>Database Management:</strong> SQL Queries, Database Design</li>
-                <li><strong>Programming Languages:</strong> Python, C (Concepts)</li>
-                <li><strong>Other Tools:</strong> Git, GitHub, Microsoft Office</li>
-            </ul>
-        </section>
-
-        <section id="projects">
-            <h2>Projects</h2>
-            <ul>
-                <li><strong>Personal Portfolio Website:</strong> Designed and developed a responsive personal website to showcase academic achievements and technical skills. Implemented a basic layout using clean HTML and styled with CSS.</li>
-                <li><strong>Database Management System Project:</strong> Academic coursework exploring relational algebra, structural modeling, and writing SQL queries for data management.</li>
-            </ul>
-        </section>
-
-        <section id="contact">
-            <h2>Contact Details</h2>
-            <div class="contact-info">
-                <p><strong>Email:</strong> shiran.kavishka@example.com (Oyage email eka methanata danna)</p>
-                <p><strong>GitHub:</strong> github.com/shiran-kavishka (Passe link eka hadala danna)</p>
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2 class="section-title">Skills</h2>
+        <div class="skills-grid">
+            <div class="skills-row">
+                <div class="skill-card">
+                    <i class="fab fa-html5"></i>
+                    <h3>HTML5 & CSS3</h3>
+                    <p style="font-size: 0.85rem; color: var(--text-light); margin-top: 5px;">Responsive Web Layouts</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fab fa-js"></i>
+                    <h3>JavaScript</h3>
+                    <p style="font-size: 0.85rem; color: var(--text-light); margin-top: 5px;">Interactive Frontend Applications</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fab fa-java"></i>
+                    <h3>Java</h3>
+                    <p style="font-size: 0.85rem; color: var(--text-light); margin-top: 5px;">Object-Oriented Programming</p>
+                </div>
             </div>
-        </section>
+            <div class="skills-row">
+                <div class="skill-card" style="padding-top: 20px;">
+                    <i class="fas fa-database"></i>
+                    <h3>SQL</h3>
+                    <p style="font-size: 0.85rem; color: var(--text-light); margin-top: 5px;">Database Modeling & Management</p>
+                </div>
+                <div class="skill-card" style="padding-top: 20px;">
+                    <i class="fab fa-git-alt"></i>
+                    <h3>Git & GitHub</h3>
+                    <p style="font-size: 0.85rem; color: var(--text-light); margin-top: 5px;">Version Control System</p>
+                </div>
+                <div class="skill-card" style="padding-top: 20px;">
+                    <i class="fas fa-robot"></i>
+                    <h3>CI/CD (Actions)</h3>
+                    <p style="font-size: 0.85rem; color: var(--text-light); margin-top: 5px;">Automation & Deployments</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    </div>
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2 class="section-title">Projects</h2>
+        <div class="projects-table">
+            <div class="project-card">
+                <h3>Personal Portfolio Website</h3>
+                <p style="color: var(--text-light); font-size: 0.9rem; margin-top: 10px;">A clean and highly responsive personal portfolio web application to display educational background, technology stacks, and practical expertise.</p>
+                <div class="project-tags">
+                    <span class="tag">HTML5</span>
+                    <span class="tag">CSS3</span>
+                    <span class="tag">JavaScript</span>
+                </div>
+                <a href="https://github.com/christyshiran10-spec/my-portfolio" target="_blank" class="proj-link">View Repository <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="project-card">
+                <h3>Student Management System</h3>
+                <p style="color: var(--text-light); font-size: 0.9rem; margin-top: 10px;">A simple desktop program built to manage student course enrollments, database records, and marks profiles seamlessly.</p>
+                <div class="project-tags">
+                    <span class="tag">Java</span>
+                    <span class="tag">SQL</span>
+                    <span class="tag">Relational DB</span>
+                </div>
+                <a href="#" class="proj-link">Academic Project <i class="fas fa-lock"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Details Section -->
+    <section id="contact">
+        <h2 class="section-title">Contact Details</h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Let's Connect</h3>
+                <p style="color: var(--text-light); margin: 10px 0 20px 0;">Feel free to reach out for university academic collaborations or developmental inquiries.</p>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>christyshiran10@gmail.com</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Colombo, Sri Lanka</span>
+                </div>
+                <div class="social-icons" style="margin-top: 25px;">
+                    <a href="https://github.com/christyshiran10-spec" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="contact-form-wrapper">
+                <!-- JavaScript Form Handling Logic Integration -->
+                <form id="contactForm">
+                    <input type="text" id="name" placeholder="Your Name" required>
+                    <input type="email" id="email" placeholder="Your Email" required>
+                    <textarea id="message" rows="4" placeholder="Your Message" required></textarea>
+                    <button type="submit" class="btn" style="border: none; width: 100%; cursor: pointer;">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
 
     <footer>
         <p>&copy; 2026 J. C. Shiran Kavishka. All Rights Reserved.</p>
     </footer>
 
+    <!-- Form Validation Interactive JavaScript -->
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevents page reload
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            if(name && email && message) {
+                alert('Thank you, ' + name + '! Your message has been captured successfully via JS logic.');
+                document.getElementById('contactForm').reset();
+            } else {
+                alert('Please fill out all the fields properly.');
+            }
+        });
+    </script>
 </body>
 </html>

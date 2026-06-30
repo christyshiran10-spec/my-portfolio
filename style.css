@@ -1,28 +1,28 @@
-/* Global CSS variables for Seamless Theme Transitions */
+/* Premium Video-Inspired Theme Variables */
 :root {
-    --bg-color: #f7f9fc;
-    --text-color: #2c3e50;
-    --primary-color: #2980b9;
-    --accent-color: #e74c3c;
-    --card-bg: #ffffff;
+    --bg-color: #ffffff;
+    --text-color: #111111;
+    --primary-color: #000000;
+    --accent-color: #d4af37; /* Gold */
+    --card-bg: #f9f9f9;
     --nav-bg: #ffffff;
-    --transition-speed: 0.3s;
+    --transition-speed: 0.4s;
 }
 
 [data-theme="dark"] {
-    --bg-color: #121212;
-    --text-color: #f5f6fa;
-    --primary-color: #f1c40f;
-    --accent-color: #e67e22;
-    --card-bg: #1e1e1e;
-    --nav-bg: #1a1a1a;
+    --bg-color: #0a0a0a; /* Deep Pitch Black */
+    --text-color: #ffffff;
+    --primary-color: #e5c158; /* Bright Gold for Highlights */
+    --accent-color: #b89028; /* Darker Gold */
+    --card-bg: #141414; /* Sleek Dark Gray Card */
+    --nav-bg: #111111;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Poppins', 'Segoe UI', sans-serif;
     transition: background-color var(--transition-speed), color var(--transition-speed), border-color var(--transition-speed);
 }
 
@@ -33,29 +33,30 @@ body {
     line-height: 1.6;
 }
 
-/* Elegant Navbar Layout */
+/* Navbar */
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 30px;
+    padding: 20px 40px;
     background-color: var(--nav-bg);
-    border-radius: 12px;
-    margin-bottom: 40px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border-radius: 50px; /* Rounded Pill Navbar */
+    margin-bottom: 50px;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
 }
 
 nav .logo {
-    font-weight: 700;
-    font-size: 22px;
+    font-weight: 800;
+    font-size: 24px;
     color: var(--primary-color);
-    letter-spacing: 0.5px;
+    letter-spacing: 1px;
 }
 
 nav ul {
     display: flex;
     list-style: none;
-    gap: 25px;
+    gap: 30px;
 }
 
 nav ul li a {
@@ -63,59 +64,118 @@ nav ul li a {
     color: var(--text-color);
     font-weight: 600;
     font-size: 15px;
+    letter-spacing: 0.5px;
 }
 
 nav ul li a:hover {
     color: var(--primary-color);
 }
 
-/* Theme Toggle Trigger Action */
+/* Neon Glow Theme Toggle Button */
 #theme-toggle {
     background: none;
     border: 2px solid var(--primary-color);
     color: var(--text-color);
-    padding: 8px 18px;
+    padding: 10px 22px;
     cursor: pointer;
     border-radius: 25px;
-    font-weight: 600;
+    font-weight: 700;
     font-size: 14px;
+    text-transform: uppercase;
 }
 
-/* Main Display Container */
-.container {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 40px;
-    background-color: var(--card-bg);
-    border-radius: 16px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.03);
-}
-
-h1 {
-    color: var(--primary-color);
-    margin-bottom: 20px;
-    font-size: 32px;
-}
-
-h2 {
-    color: var(--accent-color);
-    margin: 25px 0 15px 0;
-}
-
-.badge {
-    display: inline-block;
-    padding: 5px 12px;
+#theme-toggle:hover {
     background-color: var(--primary-color);
-    color: #fff;
-    border-radius: 15px;
-    font-size: 12px;
-    margin-right: 5px;
+    color: var(--bg-color);
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
 }
 
-.project-card, .blog-card {
-    background: rgba(0,0,0,0.02);
-    padding: 20px;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    border-left: 5px solid var(--primary-color);
+/* Layout for Hero Section (Photo + Text) */
+.hero-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    margin-top: 20px;
+}
+
+.hero-text {
+    flex: 1;
+}
+
+.hero-text h1 {
+    font-size: 48px;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 15px;
+}
+
+.hero-text h1 span {
+    color: var(--primary-color);
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.1);
+}
+
+.hero-text p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    opacity: 0.8;
+}
+
+/* Premium Gold Accent Button */
+.cta-btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: var(--primary-color);
+    color: var(--bg-color);
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 30px;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 1px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.cta-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
+}
+
+/* Circular Premium Profile Image Frame */
+.hero-image-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-img {
+    width: 320px;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 50%; /* රවුම් වෙන්න */
+    border: 5px solid var(--primary-color);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsiveness for Mobile Screens */
+@media (max-width: 768px) {
+    .hero-wrapper {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+    nav {
+        flex-direction: column;
+        gap: 15px;
+        border-radius: 20px;
+    }
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+    .profile-img {
+        width: 250px;
+        height: 250px;
+    }
 }

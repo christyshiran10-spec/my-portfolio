@@ -5,18 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JC Shiran Kavishka | Home</title>
     <link rel="stylesheet" href="style.css">
+    
+    <script>
+        if (localStorage.getItem('theme') === 'dark') {
+            document.documentElement.classList.add('dark-theme');
+        }
+    </script>
 </head>
 <body>
 
     <nav>
-        <div class="logo">Shiran</div>
+        <div class="logo">Shiran.Dev</div>
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="skills.html">Skills</a></li>
             <li><a href="projects.html">Projects</a></li>
+            <li><a href="blogs.html">Blogs</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
+        <button id="theme-toggle">🌙 Dark Mode</button>
     </nav>
 
     <div class="hero-wrapper">
@@ -27,10 +35,17 @@
         </div>
         
         <div class="hero-image-container">
-            <!-- CSS එකෙන් මේ බොක්ස් එක ඇතුලට my-photo.jpg එක දාලා blob එකක් විදිහට පාවෙන්න හදලා තියෙන්නේ -->
             <div class="profile-blob"></div>
         </div>
     </div>
 
+    
+    <br>
+    <br>
+    <footer align="center">
+        <p>&copy; 2026 Shiran.Dev. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>

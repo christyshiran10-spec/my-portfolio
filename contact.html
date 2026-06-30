@@ -3,13 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact | Shiran</title>
+    <title>Contact Me</title>
     <link rel="stylesheet" href="style.css">
+    
+    <script>
+        if (localStorage.getItem('theme') === 'dark') {
+            document.documentElement.classList.add('dark-theme');
+        }
+    </script>
 </head>
 <body>
-
     <nav>
-        <div class="logo">Shiran<span>.</span></div>
+        <div class="logo">Shiran.Dev</div>
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
@@ -18,18 +23,24 @@
             <li><a href="blogs.html">Blogs</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
+        <button id="theme-toggle">🌙 Dark Mode</button>
     </nav>
 
-    <div class="page-container">
+    <div class="container">
         <h1>Connect with Me</h1>
-        
-        <div class="content-card" style="text-align: center; padding: 40px 20px;">
-            <p style="font-size: 18px; margin-bottom: 20px;">Feel free to reach out for projects, collaborations, or tech inquiries!</p>
-            <p><strong>Email:</strong> <a href="mailto:christyshiran10@gmail.com" style="color: var(--primary-blue); font-weight: 600;">christyshiran10@gmail.com</a></p>
-            <br>
-            <p><strong>GitHub:</strong> <a href="https://github.com/christyshiran10-spec" target="_blank" style="color: var(--primary-blue); font-weight: 600;">github.com/christyshiran10-spec</a></p>
-        </div>
+        <p>If you'd like to collaborate on an ICT project, talk databases, or discuss engineering, feel free to reach out!</p>
+        <br>
+        <p><strong>Email:</strong> <a href="mailto:christyshiran10@gmail.com">christyshiran10@gmail.com</a></p>
+        <p><strong>GitHub:</strong> <a href="https://github.com/christyshiran10-spec" target="_blank">github.com/christyshiran10-spec</a></p>
     </div>
 
+   
+    <br>
+    <br>
+    <footer align="center">
+        <p>&copy; 2026 Shiran.Dev. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>

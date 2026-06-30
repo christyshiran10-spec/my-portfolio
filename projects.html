@@ -3,13 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects | Shiran</title>
+    <title>Projects Showcase</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
     <link rel="stylesheet" href="style.css">
+    
+    <script>
+        if (localStorage.getItem('theme') === 'dark') {
+            document.documentElement.classList.add('dark-theme');
+        }
+    </script>
 </head>
 <body>
-
     <nav>
-        <div class="logo">Shiran<span>.</span></div>
+        <div class="logo">Shiran.Dev</div>
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
@@ -18,21 +24,60 @@
             <li><a href="blogs.html">Blogs</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
+        <button id="theme-toggle">🌙 Dark Mode</button>
     </nav>
 
-    <div class="page-container">
+    <div class="container">
         <h1>My Projects</h1>
         
-        <div class="content-card">
-            <h3>University Enrollment Database Management System</h3>
-            <p>Designed a highly normalized backend query infrastructure implementing clean relational mapping, primary/foreign key validations, and responsive optimization structures.</p>
+        <div class="project-card">
+            <h3>1. Academic Enrollment Database Management System</h3>
+            <p>Designed a robust structural modeling schema implementing foreign keys, custom relational constraints, and performance-optimized SQL join operations tailored for managing large university environments.</p>
+            
+            <div class="project-tech-container">
+                <div class="tech-pill">
+                    <i class="devicon-azuresqldatabase-plain colored"></i>
+                    <span>SQL / DB</span>
+                </div>
+                <div class="tech-pill">
+                    <i class="devicon-git-plain colored"></i>
+                    <span>Git</span>
+                </div>
+            </div>
         </div>
 
-        <div class="content-card">
-            <h3>Dynamic Structured Responsive Web Architecture</h3>
-            <p>Developed an optimized modern website infrastructure utilizing clean semantic layouts, absolute paths, and highly maintainable components.</p>
+        <div class="project-card">
+            <h3>2. Dynamic Multi-Page Responsive Web Framework</h3>
+            <p>Developed a lightweight static system featuring responsive HTML templates, unified style assets, and customized vanilla JavaScript runtime algorithms for handling state configurations.</p>
+            
+            <div class="project-tech-container">
+                <div class="tech-pill">
+                    <i class="devicon-html5-plain colored"></i>
+                    <span>HTML5</span>
+                </div>
+                <div class="tech-pill">
+                    <i class="devicon-css3-plain colored"></i>
+                    <span>CSS3</span>
+                </div>
+                <div class="tech-pill">
+                    <i class="devicon-javascript-plain colored"></i>
+                    <span>JavaScript</span>
+                </div>
+                <div class="tech-pill">
+                    <i class="devicon-github-original colored"></i>
+                    <span>GitHub</span>
+                </div>
+            </div>
         </div>
     </div>
 
+    
+    <br>
+    <br>
+    <footer align="center">
+        <p>&copy; 2026 Shiran.Dev. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>

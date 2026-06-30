@@ -3,13 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Skills | Shiran</title>
+    <title>My Skills</title>
     <link rel="stylesheet" href="style.css">
+    
+    <script>
+        if (localStorage.getItem('theme') === 'dark') {
+            document.documentElement.classList.add('dark-theme');
+        }
+    </script>
 </head>
 <body>
-
     <nav>
-        <div class="logo">Shiran<span>.</span></div>
+        <div class="logo">Shiran.Dev</div>
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
@@ -18,33 +23,35 @@
             <li><a href="blogs.html">Blogs</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
+        <button id="theme-toggle">🌙 Dark Mode</button>
     </nav>
 
-    <div class="page-container">
-        <h1>Technical Skills & Tools</h1>
+    <div class="container">
+        <h1>Technical Skills</h1>
         
-        <div class="content-card">
-            <h3>Programming Languages & Frameworks</h3>
-            <div class="skills-grid">
-                <span class="badge">Python</span>
-                <span class="badge">Java</span>
-                <span class="badge">JavaScript</span>
-                <span class="badge">HTML5 / CSS3</span>
-                <span class="badge">React</span>
-            </div>
+        <h2>Development & Design</h2>
+        <div class="badge-container">
+            <span class="badge">HTML5 / CSS3</span>
+            <span class="badge">JavaScript (ES6+)</span>
+            <span class="badge">Full-Stack Development</span>
+            <span class="badge">Git & GitHub Workflow</span>
         </div>
-
-        <div class="content-card">
-            <h3>Databases & Engineering Tools</h3>
-            <div class="skills-grid">
-                <span class="badge">MySQL</span>
-                <span class="badge">Git & GitHub</span>
-                <span class="badge">Docker</span>
-                <span class="badge">VS Code</span>
-                <span class="badge">MATLAB</span>
-            </div>
+        
+        <h2>Data & Systems</h2>
+        <div class="badge-container">
+            <span class="badge">SQL Queries & Modeling</span>
+            <span class="badge">Relational Algebra</span>
+            <span class="badge">Database Schema Design</span>
         </div>
     </div>
 
+    
+    <br>
+    <br>
+    <footer align="center">
+        <p>&copy; 2026 Shiran.Dev. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>

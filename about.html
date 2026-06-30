@@ -3,13 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me | Shiran</title>
+    <title>About Me | Shiran Kavishka</title>
     <link rel="stylesheet" href="style.css">
+    
+    <script>
+        if (localStorage.getItem('theme') === 'dark') {
+            document.documentElement.classList.add('dark-theme');
+        }
+    </script>
 </head>
 <body>
-
     <nav>
-        <div class="logo">Shiran<span>.</span></div>
+        <div class="logo">Shiran.Dev</div>
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
@@ -18,21 +23,25 @@
             <li><a href="blogs.html">Blogs</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
+        <button id="theme-toggle">🌙 Dark Mode</button>
     </nav>
 
-    <div class="page-container">
+    <div class="container">
         <h1>About Me</h1>
+        <h2>Academic Journey</h2>
+        <p>I am a student at the <strong>University of Sri Jayewardenepura (USJ)</strong>, reading for a degree in Physical Sciences with a heavy focus on Information and Communication Technology (ICT).</p>
         
-        <div class="content-card">
-            <h2>Academic Journey</h2>
-            <p>I am an undergraduate student at the <strong>University of Sri Jayewardenepura (USJ)</strong>, reading for a physical science degree with a primary focus on Computer Science and Information Technology.</p>
-        </div>
-
-        <div class="content-card">
-            <h2>Athletic Background</h2>
-            <p>Sports define my dedication and hard work. I have been playing <strong>football</strong> since my childhood, competed in <strong>athletics</strong> events, and currently represent my university in <strong>boxing</strong> tournaments.</p>
-        </div>
+        <h2>Athletic Background</h2>
+        <p>Sports have built my discipline. I played <strong>football</strong> from my childhood, trained and competed in <strong>athletics</strong>, and currently, I represent my university in <strong>boxing</strong>.</p>
     </div>
+      
 
+    <br>
+    <br>
+    <footer align="center">
+        <p>&copy; 2026 Shiran.Dev. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>

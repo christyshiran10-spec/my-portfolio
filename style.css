@@ -157,3 +157,32 @@ footer { background-color: #111827; color: #9ca3af; text-align: center; padding:
     gap: 12px;
     text-decoration: underline;
 }
+/* --- DARK MODE STYLES (Ref: image_6693d6.jpg) --- */
+body.dark-mode {
+    --light-blue-bg: #0f172a; /* Dark Blue/Black Background */
+    --card-white: #1e293b;    /* Dark Card Color */
+    --text-dark: #f8fafc;     /* White Text */
+    --text-light: #94a3b8;    /* Muted Text */
+    --shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Light/Dark Toggle Button Styling */
+.theme-toggle {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 50%;
+    color: var(--text-light);
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+body.dark-mode .theme-toggle {
+    color: #f59e0b; /* Dark mode එකේදී හඳ/තරු කහ පාට වෙන්න */
+}
+.theme-toggle:hover {
+    background-color: rgba(37, 99, 235, 0.1);
+}

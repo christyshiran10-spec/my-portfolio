@@ -1,188 +1,46 @@
-* {
+/* 1. සාමාන්‍ය Light Mode එක (Default) */
+:root {
+    --bg-color: #ffffff;
+    --text-color: #333333;
+    --card-bg: #f4f4f4;
+    --nav-bg: #e0e0e0;
+}
+
+/* 2. Dark Mode එක (HTML එකට data-theme="dark" ආවම විතරක් වැඩ කරනවා) */
+[data-theme="dark"] {
+    --bg-color: #121212;
+    --text-color: #ffffff;
+    --card-bg: #1e1e1e;
+    --nav-bg: #2d2d2d;
+}
+
+/* Global Styles - මුළු පිටුවටම පොදුවේ */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
-html { scroll-behavior: smooth; }
-:root {
-    --primary-color: #4a6cf7;
-    --success-color: #10b981;
-    --text-dark: #1f2937;
-    --text-light: #4b5563;
-    --bg-light: #f9fafb;
-    --white: #ffffff;
-    --shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-}
-body { background-color: var(--bg-light); color: var(--text-dark); line-height: 1.6; padding-bottom: 60px; }
-header {
-    position: fixed; top: 0; left: 0; width: 100%;
-    background-color: var(--white); box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-    z-index: 1000; padding: 20px 10%; display: flex;
-    justify-content: space-between; align-items: center;
-}
-.logo { font-weight: 700; font-size: 1.4rem; color: var(--primary-color); }
-nav a { text-decoration: none; color: var(--text-dark); font-weight: 500; margin-left: 25px; transition: color 0.3s; }
-nav a:hover, nav a.active { color: var(--primary-color); }
-
-/* Fade-in Transition Animation */
-section { 
-    padding: 140px 10% 60px 10%; 
-    max-width: 1200px; 
-    margin: 0 auto;
-    animation: fadeInUp 0.8s ease-out forwards;
-}
-@keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(25px); }
-    to { opacity: 1; transform: translateY(0); }
 }
 
-.section-title { font-size: 2.3rem; text-align: center; margin-bottom: 40px; position: relative; }
-.section-title::after { content: ''; position: absolute; bottom: -8px; left: 50%; transform: translateX(-50%); width: 60px; height: 3px; background-color: var(--primary-color); border-radius: 2px; }
-
-/* Home Hero */
-#home { display: flex; align-items: center; justify-content: space-between; gap: 40px; }
-.hero-left { flex: 1; }
-.hero-left h1 { font-size: 3rem; margin-bottom: 10px; line-height: 1.2; }
-.hero-left h2 { font-size: 1.4rem; color: var(--primary-color); font-weight: 500; margin-bottom: 15px; }
-.hero-left p { color: var(--text-light); margin-bottom: 25px; font-size: 1.1rem; }
-.hero-right { flex: 1; display: flex; justify-content: center; }
-.blob-img {
-    width: 330px; height: 350px; background-image: url('photo.jpg'); background-size: cover; background-position: center;
-    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; box-shadow: 0 15px 30px rgba(74, 108, 247, 0.2);
-    animation: blob-animate 6s ease-in-out infinite alternate;
-}
-@keyframes blob-animate {
-    0% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
-    50% { border-radius: 50% 50% 30% 70% / 50% 60% 40% 50%; }
-    100% { border-radius: 60% 40% 60% 40% / 40% 30% 70% 60%; }
-}
-.btn { display: inline-block; background-color: var(--primary-color); color: var(--white); padding: 12px 28px; border-radius: 30px; text-decoration: none; font-weight: 500; box-shadow: 0 5px 15px rgba(74, 108, 247, 0.3); transition: 0.3s; border: none; cursor: pointer; }
-.btn:hover { transform: translateY(-3px); background-color: #3554d1; }
-
-/* Details Cards & Layouts */
-.card { background: var(--white); padding: 30px; border-radius: 12px; box-shadow: var(--shadow); margin-bottom: 25px; border-left: 4px solid var(--primary-color); }
-.card h3 { font-size: 1.3rem; margin-bottom: 12px; display: flex; align-items: center; gap: 10px; }
-.card ul { margin-left: 20px; margin-top: 10px; color: var(--text-light); }
-.card ul li { margin-bottom: 6px; }
-
-.skills-grid, .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
-.skill-item { background: var(--white); padding: 30px; border-radius: 12px; box-shadow: var(--shadow); transition: 0.3s; border-top: 3px solid var(--primary-color); }
-.skill-item:hover { transform: translateY(-5px); }
-.skill-item i { font-size: 2.5rem; color: var(--primary-color); margin-bottom: 15px; }
-.skill-item h3 { margin-bottom: 10px; }
-
-.tag { background-color: #eef2ff; color: var(--primary-color); padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; margin-right: 5px; font-weight: 500; display: inline-block; margin-top: 10px; }
-
-/* Contact page */
-.contact-container { display: flex; gap: 50px; }
-.contact-info { flex: 1; }
-.contact-form-wrapper { flex: 1; }
-.contact-item { margin-bottom: 20px; font-size: 1.1rem; display: flex; align-items: center; gap: 15px; }
-.contact-item i { color: var(--primary-color); font-size: 1.3rem; }
-input, textarea { width: 100%; padding: 14px; margin-bottom: 15px; border: 1px solid #e5e7eb; border-radius: 8px; outline: none; font-size: 1rem; }
-input:focus, textarea:focus { border-color: var(--primary-color); }
-
-footer { background-color: #111827; color: #9ca3af; text-align: center; padding: 20px; font-size: 0.9rem; position: fixed; bottom: 0; width: 100%; left: 0; z-index: 999; }
-/* --- PREMIUM BLOG CARDS SYSTEM (Ref: image_6693d6.jpg) --- */
-.blog-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 30px;
-    margin-top: 20px;
-}
-.blog-card {
-    background: var(--card-white);
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: var(--shadow);
-    display: flex;
-    flex-direction: column;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid rgba(37, 99, 235, 0.05);
-}
-.blog-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 35px rgba(37, 99, 235, 0.15);
-}
-.blog-img-header {
-    width: 100%;
-    height: 200px;
-    background-size: cover;
-    background-position: center;
-    background-color: #cbd5e1; /* ෆොටෝ එක ලෝඩ් වෙනකන් පේන කලර් එක */
-}
-.blog-content {
-    padding: 25px;
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-}
-.blog-meta {
-    display: flex;
-    gap: 15px;
-    font-size: 0.85rem;
-    color: var(--text-light);
-    margin-bottom: 12px;
-}
-.blog-meta i {
-    color: var(--primary-blue);
-    margin-right: 4px;
-}
-.blog-card-title {
-    font-size: 1.25rem;
-    font-weight: 600;
-    line-height: 1.4;
-    color: var(--text-dark);
-    margin-bottom: 12px;
-}
-.blog-card-text {
-    color: var(--text-light);
-    font-size: 0.92rem;
-    line-height: 1.6;
-    margin-bottom: 20px;
-    flex-grow: 1;
-}
-.blog-read-more {
-    text-decoration: none;
-    color: var(--primary-blue);
-    font-weight: 600;
-    font-size: 0.95rem;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    transition: gap 0.2s;
-}
-.blog-read-more:hover {
-    gap: 12px;
-    text-decoration: underline;
-}
-/* --- DARK MODE STYLES (Ref: image_6693d6.jpg) --- */
-body.dark-mode {
-    --light-blue-bg: #0f172a; /* Dark Blue/Black Background */
-    --card-white: #1e293b;    /* Dark Card Color */
-    --text-dark: #f8fafc;     /* White Text */
-    --text-light: #94a3b8;    /* Muted Text */
-    --shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+/* ඔයාගේ Navbar එකට මේ variables දෙන්න */
+nav {
+    background-color: var(--nav-bg);
 }
 
-/* Light/Dark Toggle Button Styling */
-.theme-toggle {
-    background: none;
-    border: none;
-    font-size: 1.2rem;
+/* ඔයාගේ Projects හෝ වෙනත් Cards තියෙනවා නම් ඒවට මේක දෙන්න */
+.card, .project-box {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+}
+
+/* Theme Toggle Button එක ලස්සන කරගන්න */
+#theme-toggle {
+    background: transparent;
+    border: 2px solid var(--text-color);
     cursor: pointer;
-    padding: 8px 12px;
-    border-radius: 50%;
-    color: var(--text-light);
+    font-size: 1.2rem;
+    padding: 5px 10px;
+    border-radius: 20px;
     transition: 0.3s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-body.dark-mode .theme-toggle {
-    color: #f59e0b; /* Dark mode එකේදී හඳ/තරු කහ පාට වෙන්න */
-}
-.theme-toggle:hover {
-    background-color: rgba(37, 99, 235, 0.1);
 }

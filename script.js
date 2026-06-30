@@ -1,26 +1,36 @@
-document.getElementById('contactForm')?.addEventListener('submit', function(e) {
-    e.preventDefault();
-    alert('Thank you! Message captured successfully.');
-    this.reset();
-});
-const themeToggleBtn = document.getElementById('themeToggle');
-const themeIcon = document.getElementById('themeIcon');
-
-// කලින් යූසර් සිලෙක්ට් කරපු තීම් එකක් තියෙනවද බලන්න
-if (localStorage.getItem('theme') === 'dark') {
-    document.body.classList.add('dark-mode');
-    themeIcon.classList.replace('fa-moon', 'fa-sun');
-}
-
-
-themeToggleBtn.addEventListener('click', () => {
-    document.body.classList.toggle('dark-mode');
+document.addEventListener('DOMContentLoaded', () => {
+    const toggleBtn = document.getElementById('theme-toggle');
     
-    if (document.body.classList.contains('dark-mode')) {
-        themeIcon.classList.replace('fa-moon', 'fa-sun');
-        localStorage.setItem('theme', 'dark'); 
-    } else {
-        themeIcon.classList.replace('fa-sun', 'fa-moon');
-        localStorage.setItem('theme', 'light'); 
+    // Browser එකේ කලින් Save කරපු Theme එකක් තියෙනවද බලනවා
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    
+    // ඒ Theme එක HTML එකට ඇප්ලයි කරනවා
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    updateButtonIcon(savedTheme);
+
+    // Button එක click කරද්දී සිදුවන දේ
+    if (toggleBtn) {
+        toggleBtn.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            let newTheme = 'light';
+
+            if (currentTheme === 'light') {
+                newTheme = 'dark';
+            }
+
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme); // Browser එකේ මතක තියාගන්නවා
+            updateButtonIcon(newTheme);
+        });
+    }
+
+    // හඳ සහ ඉර අයිකන් මාරු කරන Function එක
+    function updateButtonIcon(theme) {
+        if (!toggleBtn) return;
+        if (theme === 'dark') {
+            toggleBtn.textContent = '☀️'; // Dark mode නම් ඉර පෙන්වන්න
+        } else {
+            toggleBtn.textContent = '🌙'; // Light mode නම් හඳ පෙන්වන්න
+        }
     }
 });

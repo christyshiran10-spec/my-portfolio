@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Me</title>
+    <title>Contact Me | Shiran.Dev</title>
     <link rel="stylesheet" href="style.css">
     
-    <!-- Font Awesome Icons සඳහා (Email, Location, Education අයිකන වලට) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <script>
         if (localStorage.getItem('theme') === 'dark') {
             document.documentElement.classList.add('dark-theme');
+        } else {
+            document.documentElement.classList.remove('dark-theme');
         }
     </script>
 </head>
@@ -29,11 +30,9 @@
         <button id="theme-toggle">🌙 Dark Mode</button>
     </nav>
 
-    <!-- ප්‍රධාන Contact Section එක -->
     <section class="contact-section">
         <div class="contact-container">
             
-            <!-- වම් පැත්තේ කොටස (Get in Touch) -->
             <div class="contact-info">
                 <h2>Get in touch</h2>
                 <p>Whether you have a project idea, want to collaborate, or just want to say hello — my inbox is always open.</p>
@@ -57,7 +56,6 @@
                     </div>
                 </div>
 
-                <!-- Social Media Links -->
                 <div class="social-links">
                     <a href="#" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
                     <a href="https://github.com/christyshiran10-spec" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
@@ -65,7 +63,6 @@
                 </div>
             </div>
 
-            <!-- දකුණු පැත්තේ කොටස (Contact Form) -->
             <div class="contact-form-container">
                 <form action="#" method="POST" class="contact-form">
                     <div class="form-row">
@@ -96,7 +93,6 @@
         </div>
     </section>
 
-    <!-- නිවැරදි කරන ලද Footer එක -->
     <footer class="site-footer">
         <h3>Christy Shiran</h3>
         <ul class="footer-nav">

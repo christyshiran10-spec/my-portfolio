@@ -3,12 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Blogs</title>
+    <title>My Blogs | Shiran.Dev</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <script>
         if (localStorage.getItem('theme') === 'dark') {
             document.documentElement.classList.add('dark-theme');
+        } else {
+            document.documentElement.classList.remove('dark-theme');
         }
     </script>
 </head>
@@ -26,23 +29,66 @@
         <button id="theme-toggle">🌙 Dark Mode</button>
     </nav>
 
-    <div class="container">
-        <h1>Articles & Engineering Insights</h1>
-        
-        <div class="blog-card">
-            <h3>Understanding Relational Algebra in Database Modeling</h3>
-            <p>A deep dive into how mathematical set theory directly drives relational queries, joins, and optimizations behind enterprise DBMS infrastructures.</p>
+    <div class="container blog-page">
+        <div class="blog-header" align="center">
+            <span class="badge">LET'S LOOK</span>
+            <h1>Articles & Blog</h1>
+            <p>Thoughts, technical insights, and updates on my journey</p>
         </div>
+        
+        <div class="blog-grid">
+            <!-- BLOG CARD 1 -->
+            <div class="blog-card">
+                <div class="blog-img-container">
+                    <!-- මෙතනට ඔයා කැමති tech image එකක් දාගන්න පුළුවන් -->
+                    <img src="https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?q=80&w=600" alt="Relational Algebra">
+                </div>
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span><i class="fa-solid fa-calendar-days"></i> June 29, 2026</span>
+                        <span><i class="fa-solid fa-user"></i> Shiran Kavishka</span>
+                    </div>
+                    <h3>Understanding Relational Algebra in Database Modeling</h3>
+                    <p>A deep dive into how mathematical set theory directly drives relational queries, joins, and optimizations behind enterprise DBMS infrastructures.</p>
+                    <a href="#" class="read-more">Read Article <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
 
-        <div class="blog-card">
-            <h3>The Ring and the Terminal: Applying Boxing Discipline to Programming</h3>
-            <p>Exploring how tactical endurance, strict iterative preparation, and quick tactical adjustments in sports build clean code engineering strategies.</p>
+            <!-- BLOG CARD 2 -->
+            <div class="blog-card">
+                <div class="blog-img-container">
+                    <img src="https://images.unsplash.com/photo-1599058917212-d750089bc07e?q=80&w=600" alt="Boxing Discipline">
+                </div>
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span><i class="fa-solid fa-calendar-days"></i> June 18, 2026</span>
+                        <span><i class="fa-solid fa-user"></i> Shiran Kavishka</span>
+                    </div>
+                    <h3>The Ring and the Terminal: Applying Boxing Discipline to Programming</h3>
+                    <p>Exploring how tactical endurance, strict iterative preparation, and quick tactical adjustments in sports build clean code engineering strategies.</p>
+                    <a href="#" class="read-more">Read Article <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- BLOG CARD 3 (Boxing Certificate & Experience) -->
+            <div class="blog-card">
+                <div class="blog-img-container">
+                    <!-- ඔයාගේ සර්ටිෆිකට් එකේ ඉමේජ් එක (image_8da821.jpg) මෙතනට ලින්ක් කරන්න -->
+                    <img src="image_8da821.jpg" alt="Boxing Skill Development Camp" class="cert-img">
+                </div>
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span><i class="fa-solid fa-calendar-days"></i> February 04, 2026</span>
+                        <span><i class="fa-solid fa-user"></i> Shiran Kavishka</span>
+                    </div>
+                    <h3>Boxing Skill Development & Performance Camp 2026</h3>
+                    <p>A look into my participation in the intensive training camp organized by the Physical Education Unit and USJ Boxing Team, focused on mastering fundamental techniques and physical conditioning.</p>
+                    <a href="#" class="read-more">Read Article <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
         </div>
     </div>
 
-    
-    <br>
-    <br>
     <footer align="center">
         <p>&copy; 2026 Shiran.Dev. All rights reserved.</p>
     </footer>

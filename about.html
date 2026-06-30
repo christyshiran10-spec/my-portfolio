@@ -6,9 +6,13 @@
     <title>About Me | Shiran Kavishka</title>
     <link rel="stylesheet" href="style.css">
     
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <script>
         if (localStorage.getItem('theme') === 'dark') {
             document.documentElement.classList.add('dark-theme');
+        } else {
+            document.documentElement.classList.remove('dark-theme');
         }
     </script>
 </head>
@@ -26,18 +30,85 @@
         <button id="theme-toggle">🌙 Dark Mode</button>
     </nav>
 
-    <div class="container">
+    <div class="container about-page">
         <h1>About Me</h1>
-        <h2>Academic Journey</h2>
-        <p>I am a student at the <strong>University of Sri Jayewardenepura (USJ)</strong>, reading for a degree in Physical Sciences with a heavy focus on Information and Communication Technology (ICT).</p>
         
-        <h2>Athletic Background</h2>
-        <p>Sports have built my discipline. I played <strong>football</strong> from my childhood, trained and competed in <strong>athletics</strong>, and currently, I represent my university in <strong>boxing</strong>.</p>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <h3>2+</h3>
+                <p>Years Coding</p>
+            </div>
+            <div class="stat-card">
+                <h3>10+</h3>
+                <p>Projects Done</p>
+            </div>
+            <div class="stat-card">
+                <h3>5+</h3>
+                <p>Years Boxing</p>
+            </div>
+            <div class="stat-card">
+                <h3>&infin;</h3>
+                <p>Curiosity</p>
+            </div>
+        </div>
+
+        <div class="about-description">
+            <h2>Academic Journey</h2>
+            <p>I am a student at the <strong>University of Sri Jayewardenepura (USJ)</strong>, reading for a degree in Physical Sciences with a heavy focus on Information and Communication Technology (ICT).</p>
+            
+            <h2>Athletic Background</h2>
+            <p>Sports have built my discipline. I played <strong>football</strong> from my childhood, trained and competed in <strong>athletics</strong>, and currently, I represent my university in <strong>boxing</strong>.</p>
+        </div>
+
+        <h2 class="section-title">Education</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">2024 &mdash; PRESENT</div>
+                <div class="timeline-content">
+                    <h3>BSc in Physical Science & ICT</h3>
+                    <p>University of Sri Jayewardenepura. Focusing on Computer Science, Mathematics, and Physics.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">2020 &mdash; 2022</div>
+                <div class="timeline-content">
+                    <h3>G.C.E. Advanced Level Examination</h3>
+                    <p>Covered Mathematics, Physics, and Information & Communication Technology.</p>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section-title">Interests & Hobbies</h2>
+        <div class="hobbies-grid">
+            <div class="hobby-card">
+                <i class="fa-solid fa-guitar"></i>
+                <p>Piano & Music</p>
+            </div>
+            <div class="hobby-card">
+                <i class="fa-solid fa-glove-boxing"></i>
+                <p>Boxing</p>
+            </div>
+            <div class="hobby-card">
+                <i class="fa-solid fa-person-running"></i>
+                <p>Athletics</p>
+            </div>
+            <div class="hobby-card">
+                <i class="fa-solid fa-laptop-code"></i>
+                <p>Software Dev</p>
+            </div>
+            <div class="hobby-card">
+                <i class="fa-solid fa-calculator"></i>
+                <p>Mathematics</p>
+            </div>
+            <div class="hobby-card">
+                <i class="fa-solid fa-atom"></i>
+                <p>Physics</p>
+            </div>
+        </div>
     </div>
       
-
-    <br>
-    <br>
     <footer align="center">
         <p>&copy; 2026 Shiran.Dev. All rights reserved.</p>
     </footer>

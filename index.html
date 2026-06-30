@@ -9,6 +9,8 @@
     <script>
         if (localStorage.getItem('theme') === 'dark') {
             document.documentElement.classList.add('dark-theme');
+        } else {
+            document.documentElement.classList.remove('dark-theme');
         }
     </script>
 </head>
@@ -36,7 +38,6 @@
         
         <div class="hero-image-container">
             <div class="profile-blob">
-                <!-- ඔයාගේ photo එක මෙතනට ඇතුලත් කරලා තියෙන්නේ -->
                 <img src="my-photo.jpg" alt="Shiran's Profile Photo" class="profile-img">
             </div>
         </div>

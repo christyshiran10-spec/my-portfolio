@@ -1,4 +1,4 @@
-// 1. Run this immediately to sync the button text on page load
+// 1. පිටුවේ තියෙන බටන් එකේ Text එක නිවැරදිව Sync කරන Function එක
 function syncToggleButton() {
     const themeToggleBtn = document.getElementById('theme-toggle');
     if (!themeToggleBtn) return;
@@ -10,24 +10,26 @@ function syncToggleButton() {
     }
 }
 
-// 2. Set up the click interactions once the DOM elements exist
+// 2. HTML පිටුව load වුණාම බටන් එකට click event එක එකතු කිරීම
 document.addEventListener('DOMContentLoaded', () => {
     const themeToggleBtn = document.getElementById('theme-toggle');
     if (!themeToggleBtn) return;
 
-    // Sync button text right away when the page finishes loading
+    // පේජ් එක load වුණු ගමන් බටන් එකේ text එක (ලෝගෝ එක) හරිගස්සන්න
     syncToggleButton();
 
-    // Handle clicks to toggle themes and update localStorage
     themeToggleBtn.addEventListener('click', () => {
+        // Class එක toggle කිරීම
         document.documentElement.classList.toggle('dark-theme');
         
+        // LocalStorage එකට සේව් කිරීම
         if (document.documentElement.classList.contains('dark-theme')) {
             localStorage.setItem('theme', 'dark');
-            themeToggleBtn.textContent = '☀️ Light Mode';
         } else {
             localStorage.setItem('theme', 'light');
-            themeToggleBtn.textContent = '🌙 Dark Mode';
         }
+
+        // බටන් එකේ text එක ආයෙත් අප්ඩේට් කිරීම
+        syncToggleButton();
     });
 });

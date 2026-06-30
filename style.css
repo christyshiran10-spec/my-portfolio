@@ -1,11 +1,12 @@
-/* Clean Minimal White & Royal Blue Theme */
+/* Minimal White & Royal Blue Premium Theme */
 :root {
     --bg-color: #ffffff;
     --text-color: #111111;
-    --primary-blue: #3b71fe;    /* Royal Blue like the image */
+    --primary-blue: #3b71fe;    
     --hover-blue: #2557d6;
     --nav-text: #555555;
-    --transition-speed: 0.4s;
+    --card-bg: #f8fafd;
+    --border-color: rgba(59, 113, 254, 0.15);
 }
 
 * {
@@ -22,7 +23,7 @@ body {
     line-height: 1.6;
 }
 
-/* Minimal Navbar Layout */
+/* Unified Modern Navbar */
 nav {
     display: flex;
     justify-content: space-between;
@@ -33,8 +34,12 @@ nav {
 
 nav .logo {
     font-weight: 700;
-    font-size: 22px;
+    font-size: 24px;
     color: var(--text-color);
+}
+
+nav .logo span {
+    color: var(--primary-blue);
 }
 
 nav ul {
@@ -55,13 +60,13 @@ nav ul li a:hover {
     color: var(--primary-blue);
 }
 
-/* Hero Section Layout (Items Side by Side) */
+/* Hero Content Area */
 .hero-wrapper {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 40px;
-    min-height: 70vh;
+    min-height: 60vh;
 }
 
 .hero-text {
@@ -72,11 +77,9 @@ nav ul li a:hover {
     font-size: 56px;
     font-weight: 700;
     line-height: 1.2;
-    color: #111111;
     margin-bottom: 20px;
 }
 
-/* Image එකේ වගේ නමට විතරක් Blue color එක දීම */
 .hero-text h1 span {
     color: var(--primary-blue);
 }
@@ -88,7 +91,6 @@ nav ul li a:hover {
     max-width: 480px;
 }
 
-/* Rounded Blue CTA Button */
 .cta-btn {
     display: inline-block;
     padding: 14px 35px;
@@ -107,7 +109,7 @@ nav ul li a:hover {
     transform: translateY(-2px);
 }
 
-/* 🌀 Image එක රූපයේ විදිහටම Blob එකක් මැද පාවෙන්න හැදීම */
+/* Profile Blob Animation Fix */
 .hero-image-container {
     flex: 1;
     display: flex;
@@ -118,53 +120,72 @@ nav ul li a:hover {
 .profile-blob {
     width: 380px;
     height: 380px;
-    background-color: var(--primary-blue);
-    background-image: url('my-photo.jpg'); /* ඔයාගේ photo එක මෙතනට මැච් වෙනවා */
+    background: linear-gradient(135deg, #3b71fe, #6894ff);
+    background-image: url('my-photo.jpg'); 
     background-size: cover;
     background-position: center;
-    
-    /* Image එකේ තියෙන වගේ අසමමිතික හැඩය (Blob Shape) */
     border-radius: 40% 60% 60% 40% / 50% 40% 60% 50%;
-    
-    /* පාවෙන සහ හැඩය වෙනස් වෙන ඇනිමේෂන් එක */
     animation: blobFloat 6s ease-in-out infinite;
-    box-shadow: 0 15px 30px rgba(59, 113, 254, 0.2);
+    box-shadow: 0 15px 35px rgba(59, 113, 254, 0.25);
+    border: 4px solid #ffffff;
 }
 
 @keyframes blobFloat {
-    0% {
-        transform: translateY(0px);
-        border-radius: 40% 60% 60% 40% / 50% 40% 60% 50%;
-    }
-    50% {
-        transform: translateY(-12px); /* උඩට පාවීම */
-        border-radius: 50% 50% 40% 60% / 40% 60% 50% 60%; /* හැඩය මදක් වෙනස් වීම */
-    }
-    100% {
-        transform: translateY(0px);
-        border-radius: 40% 60% 60% 40% / 50% 40% 60% 50%;
-    }
+    0% { transform: translateY(0px) rotate(0deg); border-radius: 40% 60% 60% 40% / 50% 40% 60% 50%; }
+    50% { transform: translateY(-12px) rotate(2deg); border-radius: 50% 50% 40% 60% / 40% 60% 50% 60%; }
+    100% { transform: translateY(0px) rotate(0deg); border-radius: 40% 60% 60% 40% / 50% 40% 60% 50%; }
 }
 
-/* Responsive Mobile Layout */
+/* Pages Styling (About, Skills, Projects, Blogs) */
+.page-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.page-container h1 {
+    font-size: 36px;
+    color: var(--text-color);
+    margin-bottom: 30px;
+    border-bottom: 3px solid var(--primary-blue);
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.content-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    padding: 30px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.01);
+}
+
+.content-card h2, .content-card h3 {
+    color: var(--primary-blue);
+    margin-bottom: 10px;
+}
+
+.badge {
+    display: inline-block;
+    padding: 6px 14px;
+    background-color: rgba(59, 113, 254, 0.1);
+    color: var(--primary-blue);
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    margin: 5px;
+}
+
+/* Skills Grid layout */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
 @media (max-width: 768px) {
-    .hero-wrapper {
-        flex-direction: column-reverse;
-        text-align: center;
-        padding-top: 20px;
-    }
-    .hero-text h1 {
-        font-size: 38px;
-    }
-    nav {
-        flex-direction: column;
-        gap: 20px;
-    }
-    nav ul {
-        gap: 20px;
-    }
-    .profile-blob {
-        width: 280px;
-        height: 280px;
-    }
+    .hero-wrapper { flex-direction: column-reverse; text-align: center; }
+    nav { flex-direction: column; gap: 20px; }
+    .profile-blob { width: 280px; height: 280px; }
 }

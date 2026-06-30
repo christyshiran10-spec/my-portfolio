@@ -6,6 +6,9 @@
     <title>Contact Me</title>
     <link rel="stylesheet" href="style.css">
     
+    <!-- Font Awesome Icons සඳහා (Email, Location, Education අයිකන වලට) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <script>
         if (localStorage.getItem('theme') === 'dark') {
             document.documentElement.classList.add('dark-theme');
@@ -21,23 +24,89 @@
             <li><a href="skills.html">Skills</a></li>
             <li><a href="projects.html">Projects</a></li>
             <li><a href="blogs.html">Blogs</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
         </ul>
         <button id="theme-toggle">🌙 Dark Mode</button>
     </nav>
 
-    <div class="container">
-        <h1>Connect with Me</h1>
-        <p>If you'd like to collaborate on an ICT project, talk databases, or discuss engineering, feel free to reach out!</p>
-        <br>
-        <p><strong>Email:</strong> <a href="mailto:christyshiran10@gmail.com">christyshiran10@gmail.com</a></p>
-        <p><strong>GitHub:</strong> <a href="https://github.com/christyshiran10-spec" target="_blank">github.com/christyshiran10-spec</a></p>
-    </div>
+    <!-- ප්‍රධාන Contact Section එක -->
+    <section class="contact-section">
+        <div class="contact-container">
+            
+            <!-- වම් පැත්තේ කොටස (Get in Touch) -->
+            <div class="contact-info">
+                <h2>Get in touch</h2>
+                <p>Whether you have a project idea, want to collaborate, or just want to say hello — my inbox is always open.</p>
+                
+                <div class="info-list">
+                    <div class="info-item">
+                        <div class="icon-box"><i class="fa-regular fa-envelope"></i></div>
+                        <span>christyshiran10@gmail.com</span>
+                    </div>
+                    <div class="info-item">
+                        <div class="icon-box"><i class="fa-solid fa-location-dot"></i></div>
+                        <span>Sri Lanka</span>
+                    </div>
+                    <div class="info-item">
+                        <div class="icon-box"><i class="fa-solid fa-graduation-cap"></i></div>
+                        <span>Physical Science & ICT Undergraduate</span>
+                    </div>
+                    <div class="info-item">
+                        <div class="icon-box"><i class="fa-regular fa-clock"></i></div>
+                        <span>Reply within 24 hours</span>
+                    </div>
+                </div>
 
-   
-    <br>
-    <br>
-    <footer align="center">
+                <!-- Social Media Links -->
+                <div class="social-links">
+                    <a href="#" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+                    <a href="https://github.com/christyshiran10-spec" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+                    <a href="#" target="_blank"><i class="fa-brands fa-youtube"></i> YouTube</a>
+                </div>
+            </div>
+
+            <!-- දකුණු පැත්තේ කොටස (Contact Form) -->
+            <div class="contact-form-container">
+                <form action="#" method="POST" class="contact-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" placeholder="Your name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" placeholder="your@email.com" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" placeholder="Project idea, collaboration, etc." required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" rows="6" placeholder="Tell me about your idea or just say hello..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Send Message &rarr;</button>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- නිවැරදි කරන ලද Footer එක -->
+    <footer class="site-footer">
+        <h3>Christy Shiran</h3>
+        <ul class="footer-nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="blogs.html">Blogs</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
         <p>&copy; 2026 Shiran.Dev. All rights reserved.</p>
     </footer>
 

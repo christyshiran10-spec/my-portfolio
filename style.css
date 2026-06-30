@@ -305,3 +305,225 @@ nav ul li a:hover {
         height: 280px;
     }
 }
+profile-blob {
+    width: 380px;
+    height: 380px;
+    background-color: var(--primary-blue);
+    background-image: url('shiran.jpeg'); 
+    background-size: cover;
+    background-position: center;
+    
+    /* 🔴 Forces a perfect circle instead of an organic shape */
+    border-radius: 50%; 
+    
+    /* ⚡ Smooth up-and-down floating movement (without warping the shape) */
+    animation: circleFloat 6s ease-in-out infinite; 
+    box-shadow: 0 15px 30px rgba(59, 113, 254, 0.2);
+}
+
+/* Updated clean float animation keyframes */
+@keyframes circleFloat {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-12px); /* Smoothly floats upward */
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+/* Contact Section Styling */
+.contact-section {
+    padding: 60px 20px;
+    background-color: #f8fafc; /* ලා අළු/නිල් පසුබිම */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+}
+
+.contact-container {
+    max-width: 1100px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 50px;
+    align-items: start;
+}
+
+/* Left Side - Info */
+.contact-info h2 {
+    font-size: 28px;
+    color: #1e293b;
+    margin-bottom: 15px;
+}
+
+.contact-info p {
+    color: #64748b;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.info-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.icon-box {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ea580c; /* Icon වල පාට */
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+.info-item span {
+    color: #94a3b8;
+    font-size: 15px;
+}
+
+.social-links {
+    display: flex;
+    gap: 20px;
+}
+
+.social-links a {
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: color 0.2s;
+}
+
+.social-links a:hover {
+    color: #3b82f6;
+}
+
+/* Right Side - Form */
+.contact-form-container {
+    background: #ffffff;
+    padding: 30px;
+    border: 1px solid #e2e8f0;
+    border-radius: 4px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-size: 14px;
+    color: #64748b;
+    font-weight: 500;
+}
+
+.form-group input, 
+.form-group textarea {
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 15px;
+    color: #334155;
+    background-color: #fff;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.form-group input::placeholder, 
+.form-group textarea::placeholder {
+    color: #94a3b8;
+}
+
+.form-group input:focus, 
+.form-group textarea:focus {
+    border-color: #3b82f6;
+}
+
+.submit-btn {
+    background-color: #3b82f6; /* Image එකේ තියෙන නිල් පාට */
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.submit-btn:hover {
+    background-color: #2563eb;
+}
+
+/* Footer Styling */
+.site-footer {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #ffffff;
+    border-top: 1px solid #e2e8f0;
+    margin-top: 50px;
+}
+
+.site-footer h3 {
+    color: #1e293b;
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.footer-nav {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.footer-nav a {
+    text-decoration: none;
+    color: #64748b;
+    font-size: 14px;
+}
+
+.footer-nav a:hover {
+    color: #3b82f6;
+}
+
+.site-footer p {
+    font-size: 13px;
+    color: #94a3b8;
+}
+
+/* Responsive (Mobile phones වලට හැඩගැසීමට) */
+@media (max-width: 768px) {
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}

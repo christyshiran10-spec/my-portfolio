@@ -1,54 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8"><title>Projects | Shiran Kavishka</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects Showcase</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <div class="logo">Shiran.K</div>
-        <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About Me</a>
-    <a href="skills.html">Skills</a>
-    <a href="projects.html">Projects</a>
-    <a href="blogs.html">Blogs</a> <!-- මේ පේළිය විතරක් අදාළ තැනට දාන්න -->
-    <a href="contact.html">Contact</a>
-    <button id="theme-toggle" aria-label="Toggle Theme">🌙</button>
-</nav>
-    </header>
-    <section>
-        <h2 class="section-title">Academic & Software Projects</h2>
-        <div class="projects-grid">
-            
-            <div class="card" style="margin:0;">
-                <h3 style="color: var(--primary-color);"><i class="fas fa-laptop-code"></i> Professional Multi-Page Portfolio</h3>
-                <p style="margin-top: 10px;">A clean, fully responsive, modular portfolio deployment engineered using pure semantic HTML5, clean structured vanilla CSS3 styling matrices, and custom transition configurations.</p>
-                <ul>
-                    <li>Structured individual modular page routing maps.</li>
-                    <li>Integrated custom fluid layout blocks.</li>
-                </ul>
-                <div style="margin-top:15px;">
-                    <span class="tag">HTML5</span><span class="tag">CSS3</span><span class="tag">Responsive UI</span>
-                </div>
-            </div>
+    <nav>
+        <div class="logo">Shiran.Dev</div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="blogs.html">Blogs</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <button id="theme-toggle">🌙 Dark Mode</button>
+    </nav>
 
-            <div class="card" style="margin:0; border-left-color: var(--success-color);">
-                <h3 style="color: var(--success-color);"><i class="fas fa-server"></i> Student Management System</h3>
-                <p style="margin-top: 10px;">An standalone desktop administrative platform built using core Java architectures to manage, manipulate, and organize institutional student profiles, grades, and records.</p>
-                <ul>
-                    <li>Connected to structured Relational Database Backends using SQL operations.</li>
-                    <li>Enforces proper transactional queries and key safety protocols.</li>
-                </ul>
-                <div style="margin-top:15px;">
-                    <span class="tag">Java OOP</span><span class="tag">SQL</span><span class="tag">Database Tiering</span>
-                </div>
-            </div>
-            
+    <div class="container">
+        <h1>My Projects</h1>
+        
+        <div class="project-card">
+            <h3>1. Academic Enrollment Database Management System</h3>
+            <p>Designed a robust structural modeling schema implementing foreign keys, custom relational constraints, and performance-optimized SQL join operations tailored for managing large university environments.</p>
         </div>
-    </section>
-    <footer><p>&copy; 2026 J. C. Shiran Kavishka. All Rights Reserved.</p></footer>
+
+        <div class="project-card">
+            <h3>2. Dynamic Multi-Page Responsive Web Framework</h3>
+            <p>Developed a lightweight static system featuring responsive HTML templates, unified style assets, and customized vanilla JavaScript runtime algorithms for handling state configurations.</p>
+        </div>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>

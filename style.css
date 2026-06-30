@@ -1,102 +1,67 @@
-/* Premium Video-Inspired Theme Variables */
+/* Clean Minimal White & Royal Blue Theme */
 :root {
     --bg-color: #ffffff;
     --text-color: #111111;
-    --primary-color: #000000;
-    --accent-color: #d4af37; /* Gold */
-    --card-bg: #f9f9f9;
-    --nav-bg: #ffffff;
+    --primary-blue: #3b71fe;    /* Royal Blue like the image */
+    --hover-blue: #2557d6;
+    --nav-text: #555555;
     --transition-speed: 0.4s;
-}
-
-[data-theme="dark"] {
-    --bg-color: #0a0a0a; /* Deep Pitch Black */
-    --text-color: #ffffff;
-    --primary-color: #e5c158; /* Bright Gold for Highlights */
-    --accent-color: #b89028; /* Darker Gold */
-    --card-bg: #141414; /* Sleek Dark Gray Card */
-    --nav-bg: #111111;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', 'Segoe UI', sans-serif;
-    transition: background-color var(--transition-speed), color var(--transition-speed), border-color var(--transition-speed);
+    font-family: 'Poppins', sans-serif;
 }
 
 body {
     background-color: var(--bg-color);
     color: var(--text-color);
-    padding: 30px 10%;
+    padding: 20px 10%;
     line-height: 1.6;
 }
 
-/* Navbar */
+/* Minimal Navbar Layout */
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 40px;
-    background-color: var(--nav-bg);
-    border-radius: 50px; /* Rounded Pill Navbar */
-    margin-bottom: 50px;
-    border: 1px solid rgba(212, 175, 55, 0.2);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    padding: 30px 0;
+    margin-bottom: 60px;
 }
 
 nav .logo {
-    font-weight: 800;
-    font-size: 24px;
-    color: var(--primary-color);
-    letter-spacing: 1px;
+    font-weight: 700;
+    font-size: 22px;
+    color: var(--text-color);
 }
 
 nav ul {
     display: flex;
     list-style: none;
-    gap: 30px;
+    gap: 35px;
 }
 
 nav ul li a {
     text-decoration: none;
-    color: var(--text-color);
-    font-weight: 600;
-    font-size: 15px;
-    letter-spacing: 0.5px;
+    color: var(--nav-text);
+    font-weight: 500;
+    font-size: 16px;
+    transition: color 0.3s;
 }
 
 nav ul li a:hover {
-    color: var(--primary-color);
+    color: var(--primary-blue);
 }
 
-/* Neon Glow Theme Toggle Button */
-#theme-toggle {
-    background: none;
-    border: 2px solid var(--primary-color);
-    color: var(--text-color);
-    padding: 10px 22px;
-    cursor: pointer;
-    border-radius: 25px;
-    font-weight: 700;
-    font-size: 14px;
-    text-transform: uppercase;
-}
-
-#theme-toggle:hover {
-    background-color: var(--primary-color);
-    color: var(--bg-color);
-    box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
-}
-
-/* Layout for Hero Section (Photo + Text) */
+/* Hero Section Layout (Items Side by Side) */
 .hero-wrapper {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 50px;
-    margin-top: 20px;
+    gap: 40px;
+    min-height: 70vh;
 }
 
 .hero-text {
@@ -104,44 +69,45 @@ nav ul li a:hover {
 }
 
 .hero-text h1 {
-    font-size: 48px;
-    font-weight: 800;
+    font-size: 56px;
+    font-weight: 700;
     line-height: 1.2;
-    margin-bottom: 15px;
+    color: #111111;
+    margin-bottom: 20px;
 }
 
+/* Image එකේ වගේ නමට විතරක් Blue color එක දීම */
 .hero-text h1 span {
-    color: var(--primary-color);
-    text-shadow: 0 0 10px rgba(212, 175, 55, 0.1);
+    color: var(--primary-blue);
 }
 
 .hero-text p {
     font-size: 18px;
-    margin-bottom: 30px;
-    opacity: 0.8;
+    color: #666666;
+    margin-bottom: 35px;
+    max-width: 480px;
 }
 
-/* Premium Gold Accent Button */
+/* Rounded Blue CTA Button */
 .cta-btn {
     display: inline-block;
-    padding: 12px 30px;
-    background-color: var(--primary-color);
-    color: var(--bg-color);
+    padding: 14px 35px;
+    background-color: var(--primary-blue);
+    color: #ffffff;
     text-decoration: none;
-    font-weight: 700;
-    border-radius: 30px;
-    text-transform: uppercase;
-    font-size: 14px;
-    letter-spacing: 1px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    font-weight: 600;
+    border-radius: 8px;
+    font-size: 15px;
+    box-shadow: 0 4px 15px rgba(59, 113, 254, 0.3);
+    transition: background-color 0.3s, transform 0.3s;
 }
 
 .cta-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
+    background-color: var(--hover-blue);
+    transform: translateY(-2px);
 }
 
-/* Circular Premium Profile Image Frame */
+/* 🌀 Image එක රූපයේ විදිහටම Blob එකක් මැද පාවෙන්න හැදීම */
 .hero-image-container {
     flex: 1;
     display: flex;
@@ -149,33 +115,56 @@ nav ul li a:hover {
     align-items: center;
 }
 
-.profile-img {
-    width: 320px;
-    height: 320px;
-    object-fit: cover;
-    border-radius: 50%; /* රවුම් වෙන්න */
-    border: 5px solid var(--primary-color);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+.profile-blob {
+    width: 380px;
+    height: 380px;
+    background-color: var(--primary-blue);
+    background-image: url('my-photo.jpg'); /* ඔයාගේ photo එක මෙතනට මැච් වෙනවා */
+    background-size: cover;
+    background-position: center;
+    
+    /* Image එකේ තියෙන වගේ අසමමිතික හැඩය (Blob Shape) */
+    border-radius: 40% 60% 60% 40% / 50% 40% 60% 50%;
+    
+    /* පාවෙන සහ හැඩය වෙනස් වෙන ඇනිමේෂන් එක */
+    animation: blobFloat 6s ease-in-out infinite;
+    box-shadow: 0 15px 30px rgba(59, 113, 254, 0.2);
 }
 
-/* Responsiveness for Mobile Screens */
+@keyframes blobFloat {
+    0% {
+        transform: translateY(0px);
+        border-radius: 40% 60% 60% 40% / 50% 40% 60% 50%;
+    }
+    50% {
+        transform: translateY(-12px); /* උඩට පාවීම */
+        border-radius: 50% 50% 40% 60% / 40% 60% 50% 60%; /* හැඩය මදක් වෙනස් වීම */
+    }
+    100% {
+        transform: translateY(0px);
+        border-radius: 40% 60% 60% 40% / 50% 40% 60% 50%;
+    }
+}
+
+/* Responsive Mobile Layout */
 @media (max-width: 768px) {
     .hero-wrapper {
         flex-direction: column-reverse;
         text-align: center;
+        padding-top: 20px;
+    }
+    .hero-text h1 {
+        font-size: 38px;
     }
     nav {
         flex-direction: column;
-        gap: 15px;
-        border-radius: 20px;
+        gap: 20px;
     }
     nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px;
+        gap: 20px;
     }
-    .profile-img {
-        width: 250px;
-        height: 250px;
+    .profile-blob {
+        width: 280px;
+        height: 280px;
     }
 }
